@@ -1,0 +1,4 @@
+{
+  "url": "https://your-site.example",
+  "secret": "the same value as MAP_ACCESS_SECRET on your site"
+}

@@ -3,7 +3,7 @@ import {authorized} from '../../server/auth.js';
 import {validateGraph,graphSchema} from '../../server/schema.js';
 const headers={'Cache-Control':'no-store'};
 export default async req => {
-  if(!authorized(req)) return Response.json({error:'AI access is locked in this browser. Open the prototype from your Mac to unlock it.'},{status:401,headers});
+  if(!authorized(req)) return Response.json({error:'AI is locked in this browser. Run npm run unlock on the computer that holds the access file.'},{status:401,headers});
   if(req.headers.get('origin')!==new URL(req.url).origin) return Response.json({error:'Request not allowed.'},{status:403,headers});
   if(!process.env.OPENAI_API_KEY) return Response.json({error:'The AI service is not configured yet. Your map is still editable.'},{status:503,headers});
   let body;

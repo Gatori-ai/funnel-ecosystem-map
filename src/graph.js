@@ -12,7 +12,7 @@ export function arrange(graph, direction = 'LR') {
 }
 export function toCanvas(graph, oldNodes = [], preserve = false) {
   const previous = new Map(oldNodes.map(n=>[n.id,n]));
-  const next = arrange({title:graph.title,nodes:graph.nodes.map(n=>({id:n.id,type:'business',position:{x:0,y:0},data:{label:n.label,kind:n.kind,description:n.description,owner:n.owner,status:n.status}})),edges:graph.edges.map(e=>({...e,type:'smoothstep',markerEnd:{type:'arrowclosed',color:'#83948b'},style:{stroke:'#83948b',strokeWidth:1.6}}))});
+  const next = arrange({title:graph.title,nodes:graph.nodes.map(n=>({id:n.id,type:'business',position:{x:0,y:0},data:{label:n.label,kind:n.kind,description:n.description,owner:n.owner,status:n.status}})),edges:graph.edges.map(e=>({...e,type:'smoothstep',markerEnd:{type:'arrowclosed',color:'#6e675b'},style:{stroke:'#6e675b',strokeWidth:1.6}}))});
   if(preserve) {
     next.nodes = next.nodes.map(n=>previous.has(n.id)?{...n,position:previous.get(n.id).position,data:{...n.data,direction:previous.get(n.id).data.direction}}:n);
     const placed=next.nodes.filter(n=>previous.has(n.id));

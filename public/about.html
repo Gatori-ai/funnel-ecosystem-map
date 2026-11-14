@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>About Funnel &amp; Ecosystem Map</title>
+<link rel="icon" type="image/png" href="/gatori-enso.png">
+<style>
+  :root { --pearl:#f2ece0; --paper:#f8f4ea; --ink:#1b1a17; --body:#3d3a33; --muted:#6e675b; --red:#c23b25; --line:rgba(27,26,23,.14); --on-red:#fffdf9; }
+  @media (prefers-color-scheme: dark) {
+    :root { --pearl:#151412; --paper:#1d1c19; --ink:#f2ece0; --body:#d6cfc1; --muted:#a59d8f; --red:#e0553a; --line:rgba(242,236,224,.12); --on-red:#151412; color-scheme: dark; }
+    .mark { filter: invert(1) hue-rotate(180deg); }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--pearl); color: var(--body); font: 19px/1.6 'EB Garamond','Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif; }
+  a { color: var(--ink); text-decoration-color: var(--red); text-underline-offset: 3px; }
+  main { max-width: 720px; margin: 0 auto; padding: 22px 20px 40px; }
+  .top { display: flex; align-items: center; gap: 12px; }
+  .top .name { font-size: 26px; font-weight: 500; color: var(--ink); text-decoration: none; letter-spacing: -.3px; }
+  .top .name i { color: var(--red); font-style: normal; }
+  .top nav { margin-left: auto; font-size: 17px; }
+  h1, h2 { color: var(--ink); font-weight: 500; line-height: 1.12; letter-spacing: -.4px; }
+  h1 { font-size: clamp(32px, 4.2vw, 52px); margin: 44px 0 16px; }
+  .lead { font-size: 22px; margin: 0 0 24px; }
+  .go { display: inline-block; background: var(--red); color: var(--on-red); padding: 11px 22px; border-radius: 3px; text-decoration: none; }
+  h2 { font-size: 30px; margin: 44px 0 12px; }
+  p { margin: 0 0 14px; }
+  ol { padding: 0; margin: 18px 0 0; list-style: none; counter-reset: s; }
+  ol li { counter-increment: s; padding: 16px 0 16px 54px; border-top: 1px solid var(--line); position: relative; }
+  ol li::before { content: counter(s); position: absolute; left: 0; top: 12px; font-size: 34px; color: var(--red); line-height: 1; }
+  b { color: var(--ink); font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  td { border-top: 1px solid var(--line); padding: 9px 12px 9px 0; vertical-align: top; }
+  td:first-child { color: var(--ink); white-space: nowrap; font-style: italic; }
+  .after { margin-top: 14px; }
+  footer { max-width: 720px; margin: 0 auto; padding: 22px 20px 60px; font-size: 16px; color: var(--muted); border-top: 1px solid var(--line); display: flex; align-items: center; gap: 10px; }
+</style>
+</head>
+<body>
+<main>
+  <header class="top">
+    <img class="mark" src="/gatori-enso.png" alt="" width="44" height="44">
+    <a class="name" href="/">Funnel &amp; Ecosystem Map<i>.</i></a>
+    <nav><a href="/">Open the map</a></nav>
+  </header>
+
+  <h1>Describe your business. Get a map you can edit.</h1>
+  <p class="lead">Write how people find you, what you offer them and what happens after they buy. The map draws each piece as a card and each path as an arrow.</p>
+  <a class="go" href="/">Open the map</a>
+
+  <h2>How it works</h2>
+  <ol>
+    <li><b>Describe it.</b> Open Tools and write a few sentences: &quot;A podcast and short videos lead to a free guide. A welcome sequence invites people to a live workshop, then to a membership.&quot;</li>
+    <li><b>Read the map.</b> Each piece becomes a card with a category, a one-line description, an owner and a status. Arrows show where people go next.</li>
+    <li><b>Change it in words.</b> Choose Update this map and write what should change: &quot;Add a referral loop after the workshop.&quot; Cards you edited by hand keep your edits.</li>
+    <li><b>Change it by hand.</b> Click a card to rename it or set its owner. Drag from one card to another to connect them. Undo steps back through every change, including the ones the AI made.</li>
+    <li><b>Show it.</b> Present hides the editing panels. Export JSON saves the map as a file you can keep or send.</li>
+  </ol>
+
+  <h2>What the cards mean</h2>
+  <table>
+    <tr><td>Audience</td><td>Who you serve.</td></tr>
+    <tr><td>Content</td><td>What people see first: a podcast, videos, posts.</td></tr>
+    <tr><td>Capture</td><td>Where a stranger becomes a contact: a guide, a quiz, a signup.</td></tr>
+    <tr><td>Nurture</td><td>What keeps the conversation going: emails, a community.</td></tr>
+    <tr><td>Offer</td><td>What people can buy.</td></tr>
+    <tr><td>Delivery</td><td>How a buyer gets what they paid for.</td></tr>
+    <tr><td>Team</td><td>Who does the work.</td></tr>
+    <tr><td>System</td><td>The tools underneath.</td></tr>
+  </table>
+  <p class="after">Every new card starts with the status &quot;idea.&quot; You set it to &quot;building&quot; or &quot;live&quot; when that is true.</p>
+
+  <h2>Where your map lives</h2>
+  <p>The map and its saved copies stay in this browser. Nothing is stored on a server. When you ask the AI for a map, your description and the current map are sent to the AI model for that one request. Export JSON to keep a copy or to open the map on another device.</p>
+
+  <h2>Who made it</h2>
+  <p>Funnel &amp; Ecosystem Map is brought to you by <a href="https://gatori.ai">Gatori.ai</a>, where Nathaniel Solace teaches people to build their own tools with AI. The source is public on <a href="https://github.com/nathanielsolace/funnel-ecosystem-map">GitHub</a>.</p>
+</main>
+<footer>
+  <img class="mark" src="/gatori-enso.png" alt="" width="26" height="26">
+  <span>Brought to you by <a href="https://gatori.ai">Gatori.ai</a></span>
+</footer>
+</body>
+</html>

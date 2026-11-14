@@ -1,2 +1,0 @@
-/* Local system font fallback keeps this prototype independent of font services. */
-@font-face{font-family:'Map Sans';src:local('Avenir Next');font-weight:100 900;font-display:swap}
