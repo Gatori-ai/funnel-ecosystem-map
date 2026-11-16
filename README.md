@@ -34,9 +34,13 @@ npm install
 npm run dev
 ```
 
-This serves the full editor on your computer. Everything works except the AI, which runs in server functions.
+This serves the full editor on your computer. The editor runs locally. The built-in AI needs the Netlify functions, so use a deployed site for the connection described below.
 
-### With the AI, on your own Netlify site
+### Connect your own OpenAI key
+
+On a deployed copy, open **Tools**, expand **Connect your AI**, and paste an [OpenAI API key](https://platform.openai.com/api-keys). Press **Connect**, then describe your map. OpenAI API billing is separate from ChatGPT subscriptions. Your key stays in the tab’s memory until you reload or disconnect; each request sends it to the site’s server and OpenAI. Only enter a key on a site you trust. Your prompt and current map are also sent to OpenAI. This is an OpenAI API connection; use the assistant workflow below for Claude, ChatGPT or other tools.
+
+### Deploy your own copy
 
 1. Create a Netlify site. Build with `npm run build`, then publish this folder to the site with the Netlify CLI (production, no build step, naming your site ID).
 2. Set two function environment variables on the site:
@@ -62,10 +66,10 @@ Prompt to copy:
 
 An assistant that can read this folder gets the same instructions from [AGENTS.md](AGENTS.md).
 
-## How the AI is kept safe
+## AI and privacy
 
-- The model provider's key lives in the server functions. The browser never receives it.
-- Only a browser with a signed session can ask for a map. Everyone else can open the page and edit by hand.
+- A personal key is held in tab memory and sent to the site’s server for each request; it is not saved by the app. A site-provided key stays in server environment variables.
+- Anyone can use their own OpenAI key; a site-funded key requires a signed session. Everyone can edit by hand.
 - Requests must come from the site itself. Each address gets five AI requests per minute.
 - A description is limited to 6,000 characters and a map to 60 cards and 120 connections.
 - The model's answer is checked against a fixed schema before it touches the map. Maps hold text only, and that text is never rendered as HTML.

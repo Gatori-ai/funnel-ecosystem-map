@@ -51,7 +51,7 @@ The format, checked by `server/schema.js`:
 | `src/style.css` | All styles. Colors are the Gatori Ink palette; add no new ones |
 | `server/schema.js` | `validateGraph` and the JSON schema the model must follow. Used by the browser and the function |
 | `server/auth.js` | Signed tickets and the `map_session` cookie |
-| `netlify/functions/generate.js` | `POST /api/generate`: checks the session and origin, calls the model, validates the answer |
+| `netlify/functions/generate.js` | `POST /api/generate`: checks the origin and either a personal key or signed session, calls the model, validates the answer |
 | `netlify/functions/session.js` | `GET /api/session`: trades a launch ticket for a session, and reports status |
 | `scripts/unlock.mjs` | `npm run unlock`: opens the site with a five-minute signed link, read from `.access.json` |
 | `public/about.html` | The about page. Plain HTML, no scripts |
@@ -61,7 +61,7 @@ The format, checked by `server/schema.js`:
 Rules for changes:
 
 - `npm run build` must pass. `npm run dev` serves the editor; the AI needs the Netlify CLI's local development mode or a deploy.
-- Never commit `.access.json` or any `.env` file. Never put a provider key in code that reaches the browser.
+- Never commit `.access.json` or any `.env` file. Never hard-code a provider key in client code. A user-supplied key is held in memory only and sent to the same-origin function for that request; never persist or log it.
 - The content security policy allows scripts, fonts and connections from this site only. A font or script from another host will be blocked; ship it in `public/` or do without.
 - Anything the model returns goes through `validateGraph` before use. Keep map text out of `dangerouslySetInnerHTML`.
 - HTML files are ASCII with entities.

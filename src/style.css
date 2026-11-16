@@ -5,3 +5,5 @@
 
 /* Gatori Ink */
 .brand-mark{background:none;padding:0;border-radius:0;width:40px;height:40px}.brand span a{color:inherit;text-decoration-color:#c23b25;text-underline-offset:2px}.brand b{font-size:18px;font-weight:500;letter-spacing:-.2px}.about-link{align-self:center;color:#1b1a17;padding:0 6px;text-decoration-color:#c23b25;text-underline-offset:3px}button,input,textarea,select{border-radius:3px}
+
+.ai-connection{margin:0 18px 12px;padding:12px;border:1px solid #d3c6b4;border-radius:10px;font-size:13px}.ai-connection summary{cursor:pointer;font-weight:700}.ai-connection p{margin:8px 0;line-height:1.4}.ai-connection label,.ai-connection small{display:block;margin-top:8px}.ai-connection small{line-height:1.4}.ai-connection a{display:inline-block;margin-top:8px}.ai-key-row{display:flex;gap:6px;margin-top:4px}.ai-key-row input{min-width:0;flex:1;padding:8px;border:1px solid #cfc2af;border-radius:6px}.ai-key-row button{padding:8px}
