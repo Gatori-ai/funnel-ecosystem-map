@@ -51,7 +51,7 @@ The format, checked by `server/schema.js`:
 | `src/style.css` | All styles. Colors are the Gatori Ink palette; add no new ones |
 | `server/schema.js` | `validateGraph` and the JSON schema the model must follow. Used by the browser and the function |
 | `server/auth.js` | Signed tickets and the `map_session` cookie |
-| `netlify/functions/generate.js` | `POST /api/generate`: checks the origin and either a personal key or signed session, calls the model, validates the answer |
+| `netlify/functions/generate.js` | `POST /api/generate`: checks the origin and either a personal key or signed session, calls OpenAI, Claude or Gemini, validates the answer |
 | `netlify/functions/session.js` | `GET /api/session`: trades a launch ticket for a session, and reports status |
 | `scripts/unlock.mjs` | `npm run unlock`: opens the site with a five-minute signed link, read from `.access.json` |
 | `public/about.html` | The about page. Plain HTML, no scripts |

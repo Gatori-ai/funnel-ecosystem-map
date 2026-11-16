@@ -36,9 +36,11 @@ npm run dev
 
 This serves the full editor on your computer. The editor runs locally. The built-in AI needs the Netlify functions, so use a deployed site for the connection described below.
 
-### Connect your own OpenAI key
+### Connect your own AI
 
-On a deployed copy, open **Tools**, expand **Connect your AI**, and paste an [OpenAI API key](https://platform.openai.com/api-keys). Press **Connect**, then describe your map. OpenAI API billing is separate from ChatGPT subscriptions. Your key stays in the tab’s memory until you reload or disconnect; each request sends it to the site’s server and OpenAI. Only enter a key on a site you trust. Your prompt and current map are also sent to OpenAI. This is an OpenAI API connection; use the assistant workflow below for Claude, ChatGPT or other tools.
+On a deployed copy, open **Tools → Connect your AI**. Choose OpenAI, Claude (Anthropic), or Gemini (Google), follow the link to obtain that provider's API key, paste it, and press **Connect**. Then describe your map. API access and billing are separate from chat subscriptions and may require provider credits or an enabled billing account. The app uses `gpt-4.1-mini` (or the site operator's `MAP_AI_MODEL`), `claude-sonnet-4-6`, or `gemini-2.5-flash` respectively; your key must have access to the selected model.
+
+Your key stays in tab memory until you reload or disconnect. Each request sends it to the site's server and your chosen provider. Only enter a key on a site you trust. The prompt and current map are sent to your provider. **Connect** adds the key to the tab; the first map request checks it with the provider. For other assistants, use the JSON workflow below.
 
 ### Deploy your own copy
 
@@ -69,7 +71,7 @@ An assistant that can read this folder gets the same instructions from [AGENTS.m
 ## AI and privacy
 
 - A personal key is held in tab memory and sent to the site’s server for each request; it is not saved by the app. A site-provided key stays in server environment variables.
-- Anyone can use their own OpenAI key; a site-funded key requires a signed session. Everyone can edit by hand.
+- Anyone can use their own OpenAI, Anthropic or Google Gemini API key; a site-funded key requires a signed session. Everyone can edit by hand.
 - Requests must come from the site itself. Each address gets five AI requests per minute.
 - A description is limited to 6,000 characters and a map to 60 cards and 120 connections.
 - The model's answer is checked against a fixed schema before it touches the map. Maps hold text only, and that text is never rendered as HTML.
